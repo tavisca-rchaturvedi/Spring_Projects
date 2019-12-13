@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- A simple bean definition -->
+
+    <bean id="doj" class="DOJ">
+        <property name="date" value="10"></property>
+        <property name="month" value="10"></property>
+        <property name="year" value="10"></property>
+    </bean>
+
+    <bean id="doj1" class="DOJ">
+        <property name="date" value="101"></property>
+        <property name="month" value="101"></property>
+        <property name="year" value="101"></property>
+    </bean>
+
+
+    <bean id = "abc" class = "Employee" scope="singleton" autowire="byName" >
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="firstName" value="Rishabh"></property>
+        <property name="lastName" value="Chaturvedi"></property>
+<!--        <constructor-arg ref="doj"></constructor-arg>-->
+    </bean>
+
+    <!-- A bean definition with lazy init set on -->
+    <bean id = "bcd" class = "Employee" lazy-init = "true" >
+        <property name="firstName" value="Vishal"></property>
+        <property name="lastName" value="Sharma"></property>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+
+    <!-- more bean definitions go here -->
+
+</beans>
